@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+const env = import.meta.env.VITE_ENV;
+console.log(`Connecting to API at: ${apiUrl}`);
+
+
 </script>
 
 <template>
@@ -11,8 +17,13 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="friends in {code} places" />
+
+  <p>{{apiUrl}}</p>
+  <p><em>running in </em> {{env}} <em>environment</em></p>
 </template>
+
+
 
 <style scoped>
 .logo {
